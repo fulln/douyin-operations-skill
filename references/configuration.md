@@ -22,6 +22,7 @@ Use this file when creating or changing `douyin-ops.yaml`.
 | `business_path` | Ordered path from content to business value | The conversion journey changes |
 | `content` | Pillars, recurring series, duration bands, constraints | Comparable tests support a new content system |
 | `cadence` | Publishing and review rhythm | Production capacity changes |
+| `video_production` | Capture modes, canvas, captions, audio, gates, and export defaults | The production stack or delivery requirements change |
 | `research` | Search vocabulary and durable-account sample | Audience language or the niche changes |
 | `funnel` | Ordered diagnosis and account-specific thresholds | Metric definitions or historical baselines change |
 | `experiments` | Single-variable test discipline | The learning cadence changes |

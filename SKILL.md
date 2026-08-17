@@ -1,6 +1,6 @@
 ---
 name: douyin-operations-skill
-description: Plan, operate, and review a Douyin account through a reusable YAML configuration covering positioning, audience, content pillars, publishing cadence, short-video hooks, funnel metrics, benchmark research, live or ecommerce modes, compliance, and controlled growth experiments. Use when the user asks to 做抖音运营、账号定位、内容规划、选题、脚本、周复盘、数据诊断、对标研究、直播或电商内容协同，或希望把一套抖音运营方法复用于不同账号。
+description: Plan, produce, operate, and review a Douyin account through a reusable YAML configuration covering positioning, audience, content pillars, publishing cadence, short-video briefs, scripts, shot lists, filming or screen recording, editing, captions, export QA, funnel metrics, benchmark research, live or ecommerce modes, compliance, and controlled growth experiments. Use when the user asks to 做抖音运营、账号定位、内容规划、选题、脚本、视频创作、分镜、剪辑流程、成片验收、周复盘、数据诊断、对标研究、直播或电商内容协同，或希望把一套抖音运营及视频生产方法复用于不同账号。
 ---
 
 # Douyin Operations
@@ -33,6 +33,7 @@ Choose the narrowest lane that satisfies the request:
 
 - **Setup**: define positioning, audience, promise, content pillars, funnel, and baseline.
 - **Content cycle**: produce a controlled batch of topics and video briefs.
+- **Video production**: move one approved brief through script, assets, capture, edit, QA, and publish-package gates.
 - **Review**: diagnose recent account and content performance.
 - **Benchmark**: study durable public patterns without copying creative expression.
 - **Live or ecommerce coordination**: include these only when enabled in `modes`.
@@ -103,9 +104,36 @@ Follow `experiments`:
 
 Choose the variable from the first blocked stage. Examples include topic framing, opening line, first frame, proof order, pacing, duration, or CTA. Do not change all of them in one batch.
 
+## Run the video production workflow
+
+Read `references/video-production.md` whenever the user asks for a script, storyboard, filming plan, edit, finished video, or production workflow.
+
+Create one traceable project folder before producing assets:
+
+```bash
+python "<skill-directory>/scripts/init_video_project.py" \
+  --output-root /absolute/path/video-projects \
+  --project-slug "topic-slug" \
+  --title "视频标题" \
+  --primary-metric "five_second_retention" \
+  --changed-variable "opening_line"
+```
+
+Move through these gates in order:
+
+1. **Brief**: approve the audience problem, one promise, proof, CTA, experiment variable, and success threshold.
+2. **Script**: lock the opening, beats, proof order, spoken lines, on-screen text, and duration budget.
+3. **Assets**: confirm shot list, source files, permissions, product facts, screen state, and audio rights.
+4. **Capture**: record the configured production mode and preserve clean source takes.
+5. **Edit**: complete structure cut, picture lock, captions, audio, graphics, and claim review.
+6. **Export QA**: inspect the opening, sampled middle frames, ending, captions, audio sync, safe zones, playback, and compliance.
+7. **Publish package**: prepare the final file, caption, cover/first frame, one CTA, disclosures, and measurement card.
+
+Do not skip a failed gate. When direct media-generation or editing tools are unavailable, complete the project documents and give the user an exact handoff instead of pretending an export exists.
+
 ## Produce content briefs
 
-For each requested video, return:
+For each requested video, fill the project documents and return:
 
 1. Audience problem and single promise.
 2. Title or topic line.
@@ -116,6 +144,7 @@ For each requested video, return:
 7. One CTA mapped to the configured business path.
 8. Compliance and claim check.
 9. Changed variable and success threshold.
+10. Production status, unresolved assets, and the next gate.
 
 Only create a multi-post calendar when requested. Prefer a small comparable batch over a large speculative calendar.
 
@@ -138,5 +167,6 @@ When `evidence.update_ledger` is true, append reliable observations with the obs
 - Require explicit action-time approval before publishing, editing, deleting, messaging, commenting, following, advertising, spending, or changing shop/live settings.
 - Check current official rules before regulated, ecommerce, health, finance, claims-heavy, or AIGC content.
 - Mark AI-generated or synthetic content when current law or platform policy requires it.
+- Verify asset, music, voice, likeness, trademark, and footage rights before final export.
 - Never invent metrics, testimonials, sales, attribution, scarcity, guarantees, or platform thresholds.
 - Never describe correlation as platform causation or promise distribution.

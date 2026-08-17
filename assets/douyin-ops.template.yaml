@@ -75,6 +75,44 @@ cadence:
   review_after_hours: 24
   weekly_review_day: "Monday"
 
+video_production:
+  enabled: true
+  project_directory: "video-projects"
+  allowed_modes:
+    - "talking_head"
+    - "product_demo"
+    - "screen_recording"
+    - "mixed"
+    - "ai_assisted"
+  default_mode: "mixed"
+  canvas:
+    aspect_ratio: "9:16"
+    width: 1080
+    height: 1920
+    frame_rate: 30
+    safe_zone_overlay_required: true
+  captions:
+    enabled: true
+    max_lines: 2
+    human_review_required: true
+  audio:
+    dialogue_priority: true
+    rights_check_required: true
+    listen_on_phone_speaker: true
+  gates:
+    require_brief_approval: true
+    require_script_lock: true
+    require_asset_check: true
+    require_rough_cut_review: true
+    require_final_qa: true
+  export:
+    container: "mp4"
+    video_codec: "h264"
+    audio_codec: "aac"
+    verify_playback: true
+    sample_frames: 5
+  keep_source_assets: true
+
 research:
   search_terms:
     problem:
