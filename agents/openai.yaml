@@ -1,0 +1,4 @@
+interface:
+  display_name: "抖音运营复盘"
+  short_description: "可配置抖音账号定位、内容规划、数据复盘与单变量增长实验"
+  default_prompt: "使用 $douyin-operations-skill 读取我的运营配置，诊断账号当前阻塞并制定下一轮内容实验。"

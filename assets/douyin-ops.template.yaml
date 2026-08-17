@@ -1,0 +1,139 @@
+schema_version: 1
+
+account:
+  name: {{ACCOUNT_NAME_JSON}}
+  brand_name: {{BRAND_NAME_JSON}}
+  platform: "douyin"
+  positioning: "用一句话说明服务谁、解决什么问题、凭什么可信"
+  primary_goal: {{PRIMARY_GOAL_JSON}}
+  north_star_metric: "首次有效转化"
+
+workspace:
+  root: {{WORKSPACE_ROOT_JSON}}
+
+modes:
+  short_video: true
+  image_text: false
+  live: false
+  ecommerce: false
+  local_services: false
+
+evidence:
+  update_ledger: false
+  paths:
+    strategy: ""
+    content_ledger: ""
+    research_log: ""
+    conversion_report: ""
+  test_traffic_labels:
+    - "self-test"
+    - "team-test"
+
+positioning:
+  min_aligned_posts_before_change: 10
+
+audience:
+  primary:
+    - "核心用户类型 1"
+    - "核心用户类型 2"
+  jobs:
+    - "用户要完成的任务"
+  pains:
+    - "高频阻碍或异议"
+  desired_outcomes:
+    - "用户期望得到的结果"
+
+business_path:
+  stages:
+    - "观看内容"
+    - "主页访问或关注"
+    - "了解产品或服务"
+    - "首次有效转化"
+    - "复购或长期使用"
+
+content:
+  pillars:
+    - name: "真实案例或演示"
+      share: 45
+    - name: "方法教程"
+      share: 30
+    - name: "失败拆解或对比"
+      share: 20
+    - name: "品牌与产品动态"
+      share: 5
+  recurring_series:
+    - "固定栏目 1"
+    - "固定栏目 2"
+  duration_bands_seconds:
+    - [15, 30]
+    - [30, 60]
+  one_promise_per_post: true
+  one_cta_per_post: true
+
+cadence:
+  posts_per_week: 5
+  review_after_hours: 24
+  weekly_review_day: "Monday"
+
+research:
+  search_terms:
+    problem:
+      - "用户问题词"
+    solution:
+      - "解决方案词"
+    failure:
+      - "失败与异议词"
+    identity:
+      - "目标用户身份词"
+    commercial_intent:
+      - "购买或行动意图词"
+  benchmark:
+    accounts_to_inspect: [5, 8]
+    posts_per_account: [3, 6]
+    min_aligned_visible_posts: 20
+    require_recurring_series: true
+    require_stable_positioning: true
+
+funnel:
+  baseline: "historical_median"
+  stages:
+    - name: "distribution"
+      label: "分发"
+      metrics: ["impressions", "plays", "traffic_source_mix"]
+    - name: "hook"
+      label: "开场留存"
+      metrics: ["two_second_retention", "five_second_retention"]
+    - name: "consumption"
+      label: "内容消费"
+      metrics: ["average_watch_time", "completion_rate"]
+    - name: "value"
+      label: "内容价值"
+      metrics: ["like_rate", "comment_rate", "share_rate", "save_rate"]
+    - name: "intent"
+      label: "用户意向"
+      metrics: ["follow_rate", "profile_visit_rate", "lead_actions"]
+    - name: "conversion"
+      label: "业务转化"
+      metrics: ["qualified_leads", "orders", "first_success", "repeat_conversion"]
+  thresholds: {}
+
+experiments:
+  change_one_primary_variable: true
+  minimum_comparable_posts: 3
+  preferred_batch_size: [3, 5]
+  require_predeclared_success_threshold: true
+  allowed_primary_variables:
+    - "topic_framing"
+    - "opening_line"
+    - "first_frame"
+    - "proof_order"
+    - "pacing"
+    - "duration"
+    - "cta"
+
+compliance:
+  verify_current_official_rules: true
+  exact_approval_for_external_actions: true
+  label_aigc_when_required: true
+  forbid_unverified_claims: true
+  forbid_invented_metrics: true
